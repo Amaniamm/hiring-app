@@ -25,7 +25,7 @@ pipeline {
                     sh '''
                     kubectl --kubeconfig=$KUBECONFIG apply -f deployment.yaml
                     kubectl --kubeconfig=$KUBECONFIG set image deployment/my-app-deployment \
-                        your-container-name=amanitechie/test:$BUILD_NUMBER --record
+                        my-app-container=amanitechie/test:$BUILD_NUMBER --record
                     '''
                 }
             }
