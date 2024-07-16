@@ -24,7 +24,7 @@ pipeline {
                 withCredentials([file(credentialsId: 'your-kubeconfig-credential-id', variable: 'KUBECONFIG')]) {
                     sh '''
                     kubectl --kubeconfig=$KUBECONFIG apply -f deployment.yaml
-                    kubectl --kubeconfig=$KUBECONFIG set image deployment/your-deployment-name \
+                    kubectl --kubeconfig=$KUBECONFIG set image deployment/my-app-deployment \
                         your-container-name=amanitechie/test:$BUILD_NUMBER --record
                     '''
                 }
