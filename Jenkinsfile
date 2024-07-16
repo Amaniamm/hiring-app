@@ -19,5 +19,16 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to Kubernetes') {
+            steps {
+                withCredentials([file(credentialsId: 'your-kubeconfig-credential-id', variable: 'KUBECONFIG')]) {
+                    sh '''
+                    kubectl --kubeconfig=$KUBECONFIG apply -f deployment.yaml
+                    kubectl --kubeconfig=$KUBECONFIG set image deployment/your-deployment-name \
+                        your-container-name=amanitechie/test:$BUILD_NUMBER --record
+                    '''
+                }
+            }
+        }
     }
 }
