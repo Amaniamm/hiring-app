@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: my-app-container
-          image: amanitechie/test:7
+          image: amanitechie/test:10
           ports:
             - containerPort: 80
