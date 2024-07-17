@@ -1,6 +1,6 @@
 FROM tomcat:8.0.20-jre8
 # Define environment variables for Nexus repository and the artifact to download
-ENV NEXUS_REPO_URL="http://65.2.74.15:8081/repository/sonarqube/"
+ENV NEXUS_REPO_URL="http://3.111.32.195:8081/repository/sonarqube/"
 ENV ARTIFACT_PATH="com/javatpoint/SimpleCustomerApp/22-SNAPSHOT/SimpleCustomerApp-22-20240716.131443-1.war"
 
 # Download the WAR file from Nexus and copy it to the Tomcat webapps directory
